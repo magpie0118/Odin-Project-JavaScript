@@ -1,3 +1,23 @@
+
+// MDN Learn - JS Functions
+
+const myText = 'I am a string'
+console.log(myText)
+const newString = myText.replace('string', 'sausage')
+console.log(newString);
+
+const myArray = ['I', 'love', 'chocolate', 'candy'];
+const madeAString = myArray.join(' ');
+console.log(madeAString);
+
+const myNumber = Math.random();
+console.log(myNumber)
+
+function favoriteAnimal(animal) {
+  console.log(animal + " are my favorite animals!")
+}
+favoriteAnimal('Elephants')
+
 // Eloquent JavaScript
 // CH 1 Values, Types and Operators
 // Parentheses Exponent Multiplication Division Addition Subtraction
@@ -26,23 +46,142 @@ console.log(typeof "x") //string
 console.log(- (10 - 2)) // answer is -8; unary operation
 
 // Boolean values
+// Comparison
+console.log(3 > 2) //true
+console.log(3 < 2) //false
+console.log("Ardvark" < "Zoroaster") // True because Z comes after A
+console.log("z" < "a") //False because z comes after
+console.log("Itchy" != "Scratchy") //True
+console.log("Apple" == "Orange") //false
+console.log(NaN == NaN) //False
 
+//Logical Operators
+console.log(true && false) // && represents AND - output is False
+console.log(true && true) // output is true
+console.log(false || true) // || represents OR - output true
+console.log(false || false) // || output is false
+console.log(1 + 1 == 2 && 10 * 10 > 50) // output is true
+console.log(true ? 1:2) // output is 1
+console.log(false ? 1:2) // output is 2
+console.log(true? 1:3) // output is 1
+console.log(false? 1:3) // output is 3
 
-// MDN Learn - JS Functions
+// Empty values
+console.log(8 * null) // it's like multiplying 8 * 0; result is zero
+console.log("5" - 1) //4
+console.log("5" +1) //51
+console.log("five" * 2) //NaN
+console.log(false == 0) // true --- bc true == 1
+console.log(null == undefined) // True
+console.log (null == 0) // false
+console.log(null || "user") //user
+console.log("Agnes" || "user") // Agnes
 
-const myText = 'I am a string'
-console.log(myText)
-const newString = myText.replace('string', 'sausage')
-console.log(newString);
+// CH 2 - PROGRAM STRUCTURE (ELOQUENT JavaScript)
+//Variables AKA Bindings
 
-const myArray = ['I', 'love', 'chocolate', 'candy'];
-const madeAString = myArray.join(' ');
-console.log(madeAString);
+let ten = 10;
+console.log(ten * ten); //100
 
-const myNumber = Math.random();
-console.log(myNumber)
+let mood = "light";
+console.log(mood); //light
 
-function favoriteAnimal(animal) {
-  console.log(animal + " are my favorite animals!")
+mood = "dark";
+console.log(mood); //dark; variable value has been changed
+
+let luigisDebt = 140;
+luigisDebt = luigisDebt - 35;
+console.log(luigisDebt); // 105
+
+let one = 1, two = 2; //declaring multiple variables on one line
+console.log(one + two); //3
+
+var name = "Ayda"; // var is acceptable but preferred is let(can be changed) or const(cannot be changed)
+const greeting = "Hello";
+console.log(greeting + name); //Hello Ayda
+
+// Functions
+
+// prompt("Enter passcode");
+console.log(Math.max(2,3,4,20)); // 20 -- Math.max gives the largest value
+console.log(Math.min(2, 4) + 100); // 102
+
+// Control Flow
+let theNumber = Number(prompt("Pick a Number"));
+if (!Number.isNaN(theNumber)) {
+  console.log("Your number is the square root of " + theNumber * theNumber);
 }
-favoriteAnimal('Elephants')
+
+if (1 + 1 == 2) console.log("It's true"); // It's true
+
+let num = Number(prompt("Pick a Number"));
+if (num < 10) {
+  console.log("Small");
+} else if (num < 100) {
+  console.log("Medium");
+} else {
+  console.log("Large");
+}
+
+// While Loops
+
+let number = 0;
+while (number <= 12) {
+  console.log(number);
+  number = number + 2; // prints 0, 2, 4, 6, 8, 10, 12
+}
+
+let result = 1;
+let counter = 0;
+while (counter < 10) {
+  result = result * 2;
+  counter = counter + 1;
+}
+console.log(result); //1024
+
+// Do Loops
+
+let yourName = prompt("Who are you?"); // Variable definition
+
+do {
+  yourName = prompt("Who are you?");
+} while (!yourName);
+console.log(yourName);
+
+// For Loops
+for (let numb = 0; numb <= 12; numb = numb +2) {
+  console.log(numb);
+}
+
+let results = 1;
+for (let counter = 0; counter < 10; counter = counter + 1) {
+  results = results * 2;
+}
+console.log(result);
+
+// Breaking out of a Loop
+
+for (let current = 20; ; current = current + 1) {
+  if (current % 7 == 0) {
+    console.log(current);
+    break;
+  }
+
+// Counting more efficiently
+
+for (let number = 0; number <= 12; number += 2) {
+  console.log(number);
+ }
+
+// Capitalization & Comments
+
+// use camelCase OR camel_case
+
+// This is a one line Comments
+
+/* this
+is a
+multi
+line
+comment
+*/
